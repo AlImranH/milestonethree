@@ -10,13 +10,24 @@ console.log(mile);
 
 // Wood Calculator 
 function woodCalculator(numOfChair, numOfTable, numOfBed){
+    if(numOfChair < 0){
+        return "You given an negative value. Please enter a valid number of chair.";
+    }
+    else if(numOfTable < 0){
+        return "You given an negative value. Please enter a valid number of table";
+    }
+    else if(numOfBed < 0){
+        return "You given an negative value. Please enter a valid number of bed";
+    }
+    else{
+        var woodForChair = numOfChair * 1;
+        var woodForTable = numOfTable * 3;
+        var woodForBed = numOfBed * 5;
+        var totalWood = woodForChair + woodForTable + woodForBed;
 
-    var woodForChair = numOfChair * 1;
-    var woodForTable = numOfTable * 3;
-    var woodForBed = numOfBed * 5;
-    var totalWood = woodForChair + woodForTable + woodForBed;
-
-    return "Total wood need = " + totalWood;
+        return "Total wood need = " + totalWood;
+    }
+    
 }
 var total = woodCalculator(10, 20, 10);
 console.log(total);
@@ -51,5 +62,6 @@ function tinyFriend(friendNames){
     }
     return "Smallest Friend Name = " + smallestName;
 }
-console.log(tinyFriend(['arafat', 'imran', 'suma']));
+var names = ['imran', 'arafat', 'suma'];
+console.log(tinyFriend(names));
 // Tiny Friend Name Calculator 
